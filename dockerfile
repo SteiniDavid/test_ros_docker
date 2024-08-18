@@ -11,8 +11,7 @@ RUN apt-get update \
 
 
 # Example of copying a file
-COPY config/ /site_config/
-
+COPY config/ /config_ros/
 
 # Create a non-root user
 ARG USERNAME=ros
