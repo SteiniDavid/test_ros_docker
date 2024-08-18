@@ -1,13 +1,7 @@
-# syntax=docker/dockerfile:1
-
-# Use BuildKit's ARG to determine the target architecture
-ARG TARGETARCH
-
 # Base image with architecture-specific tag
-FROM --platform=$TARGETARCH osrf/ros:humble-desktop-full
-
-FROM osrf/ros:humble-desktop-full
-
+# It looks like builds for arm64 are not pre built. 
+# It will have to either be compiled or I am missing something.
+FROM --platform=linux/amd64 osrf/ros:iron-desktop-full
 
 # Example of installing programs
 RUN apt-get update \
