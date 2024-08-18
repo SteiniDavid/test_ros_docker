@@ -1,3 +1,11 @@
+# syntax=docker/dockerfile:1
+
+# Use BuildKit's ARG to determine the target architecture
+ARG TARGETARCH
+
+# Base image with architecture-specific tag
+FROM --platform=$TARGETARCH osrf/ros:humble-desktop-full
+
 FROM osrf/ros:humble-desktop-full
 
 
